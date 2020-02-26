@@ -26,6 +26,10 @@ React App 2020 is a demonstration of some of my favourite tools and patterns for
 - Style the page and button.
 - Use [Cypress](https://www.cypress.io/) for end to end tests.
 
+### Honerable Mentions
+
+[React Workspaces Playground](https://github.com/react-workspaces/react-workspaces-playground) extends Create React App's react-scripts to get the closest thing to Create React App working in a monorepo with lerna and hot reloading. I think monorepos are a good idea if you have multiple apps depending on a component library but is overkill if you only have a single app like we do here.
+
 ## 💻 Running Locally
 
 Install dependencies first.
