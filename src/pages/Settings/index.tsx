@@ -1,12 +1,18 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
+import { jsx, Container } from "theme-ui";
 
 import { Button } from "components/Button";
+import { Toolbar } from "components/Toolbar";
+import { ToolbarHeading } from "components/Toolbar/ToolbarHeading";
 
 export const Settings = () => (
 	<div>
-		<Styled.h1>Settings</Styled.h1>
-		<Button onClick={() => alert("hello")}>Hello</Button>
+		<Toolbar>
+			<ToolbarHeading>Settings</ToolbarHeading>
+		</Toolbar>
+		<Container>
+			<Button onClick={() => alert("hello")}>Hello</Button>
+		</Container>
 	</div>
 );
 

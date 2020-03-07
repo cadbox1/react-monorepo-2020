@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { useEffect } from "react";
-import { jsx, Styled } from "theme-ui";
+import { jsx, Container } from "theme-ui";
 
 import { Button } from "components/Button";
 import { usePromise } from "common/hooks/usePromise";
+import { Toolbar } from "components/Toolbar";
+import { ToolbarHeading } from "components/Toolbar/ToolbarHeading";
 
 const kanyeApi = "https://api.kanye.rest";
 
@@ -27,13 +29,16 @@ export const Dashboard = () => {
 
 	return (
 		<div>
-			<Styled.h1>Dashboard</Styled.h1>
-			<Button onClick={() => call()}>
-				{pending ? "Refreshing..." : "Refresh"}
-			</Button>
-			<p>Random Kanye West quote:</p>
-			<p>{value?.quote}</p>
-			<div></div>
+			<Toolbar>
+				<ToolbarHeading>Dashboard</ToolbarHeading>
+			</Toolbar>
+			<Container>
+				<Button onClick={() => call()}>
+					{pending ? "Refreshing..." : "Refresh"}
+				</Button>
+				<p>Random Kanye West quote:</p>
+				<p>{value?.quote}</p>
+			</Container>
 		</div>
 	);
 };
