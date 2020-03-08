@@ -29,13 +29,16 @@ export const Sidebar = ({ children }: SidebarProps) => {
 			{isMobile && (
 				<div
 					sx={{
+						visibility: showSidebar ? "visible" : "hidden",
 						position: "fixed",
 						width: "100vw",
 						height: "100vh",
 						backgroundColor: "muted",
 						cursor: "pointer",
 						opacity: showSidebar ? 1 : 0,
-						transition: "opacity 0.2s ease-out",
+						transition: `opacity 0.2s ease-out${
+							showSidebar === false ? ", visibility 0s 0.2s" : "" // delay hidden transition by 0.2 seconds
+						}`,
 					}}
 					onClick={toggleSidebar}
 				/>
