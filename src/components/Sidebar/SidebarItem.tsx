@@ -1,35 +1,46 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
-import { Link } from "react-router-dom";
+import { jsx, Styled, css } from "theme-ui";
+import { NavLink } from "react-router-dom";
 import { useSidebar } from "./useSidebar";
 
 export const SidebarItem = ({
+	exact,
 	children,
 	...props
 }: {
 	to: string;
+	exact?: boolean;
 	children: React.ReactNode;
 }) => {
-	const { setShowSidebar } = useSidebar();
+	const { setShowSidebar, mobileMenu } = useSidebar();
 
 	const handleClick = () => {
-		setShowSidebar(false);
+		if (mobileMenu) {
+			setShowSidebar(false);
+		}
 	};
 
 	return (
-		<Styled.a
-			as={Link}
+		<NavLink
 			onClick={handleClick}
+			activeClassName="active"
 			sx={{
+				variant: "styles.a",
 				display: "block",
 				my: 2,
 				mx: 2,
 				color: "text",
 				cursor: "pointer",
+				"&.active": {
+					color: "primary",
+					cursor: "default",
+					textDecoration: "none",
+				},
 			}}
+			exact={exact}
 			{...props}
 		>
 			{children}
-		</Styled.a>
+		</NavLink>
 	);
 };

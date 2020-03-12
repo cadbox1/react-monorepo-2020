@@ -1,8 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { useState } from "react";
-// @ts-ignore
-import { useBreakpointIndex } from "@theme-ui/match-media";
 
 import { useSidebar } from "./useSidebar";
 
@@ -11,22 +8,12 @@ type SidebarProps = {
 };
 
 export const Sidebar = ({ children }: SidebarProps) => {
-	const { showSidebar, setShowSidebar, toggleSidebar } = useSidebar();
-
-	const breakpointIndex = useBreakpointIndex();
-	const isMobile = breakpointIndex === 0;
-
-	// reset the sidebar to the default if the screen breakpoint changes
-	const [previousIsMobile, setPreviousIsMobile] = useState();
-	if (isMobile !== previousIsMobile) {
-		setShowSidebar(!isMobile);
-		setPreviousIsMobile(isMobile);
-	}
+	const { showSidebar, toggleSidebar, mobileMenu } = useSidebar();
 
 	return (
 		<div>
 			{/* backdrop to close sidebar on mobiles */}
-			{isMobile && (
+			{mobileMenu && (
 				<div
 					sx={{
 						visibility: showSidebar ? "visible" : "hidden",
@@ -44,7 +31,7 @@ export const Sidebar = ({ children }: SidebarProps) => {
 				/>
 			)}
 			{/* pushes the content to the right so the sidebar can slide in and be next to the content */}
-			{!isMobile && showSidebar && <div sx={{ width: "200px" }} />}
+			{!mobileMenu && showSidebar && <div sx={{ width: "200px" }} />}
 			<nav
 				sx={{
 					position: "fixed",
