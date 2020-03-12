@@ -31,10 +31,12 @@ export const SidebarItem = ({
 				mx: 2,
 				color: "text",
 				cursor: "pointer",
+				":hover": {
+					textDecoration: "none",
+				},
 				"&.active": {
 					color: "primary",
 					cursor: "default",
-					textDecoration: "none",
 				},
 			}}
 			exact={exact}
