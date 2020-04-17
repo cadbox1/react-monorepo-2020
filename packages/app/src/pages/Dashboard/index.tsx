@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { jsx, Container } from "theme-ui";
 
 import { Button, Toolbar, ToolbarHeading } from "components";
-import { usePromise } from "use-promise";
+import { usePromise } from "@cadbox1/use-promise";
 
 const kanyeApi = "https://api.kanye.rest";
 

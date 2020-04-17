@@ -11,7 +11,7 @@
 		"react-router-dom": "^5.1.2",
 		"react-scripts": "3.4.0",
 		"theme-ui": "^0.3.1",
-		"use-promise": "1.0.0"
+		"@cadbox1/use-promise": "1.0.0"
 	},
 	"scripts": {
 		"start": "react-scripts start",
