@@ -2,12 +2,7 @@
 
 React Monorepo 2020 is a demonstration of some of my favourite tools and patterns for React in 2020 in a Monorep.
 
-This is based on my non-monorepo app, (React App 2020)[https://github.com/cadbox1/react-app-2020], which I strongly recommend starting with. You can scale a single app a long way before even thinking about a Monorepo.
-
-## 🚀 Demo
-
-- [App](https://react-app-2020.netlify.com/)
-- [Storybook and docs](https://react-app-2020-storybook.netlify.com/)
+This is based on my non-monorepo app, [React App 2020](https://github.com/cadbox1/react-app-2020), which I strongly recommend starting with. You can scale a single app a long way before even thinking about a Monorepo.
 
 ## 🔧 Tools
 
@@ -68,16 +63,18 @@ cd packages/package-template
 yarn build-watch
 ```
 
-## 📝 Setup VSCode
-
-Install [VSCode](https://code.visualstudio.com/).
-
-Install these extensions:
-
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
-- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-
-Install the [command line tools](https://code.visualstudio.com/docs/editor/command-line).
-
 ## 🔨 DIY
+
+1. Create a packages directory.
+2. Create a `package.json` at the root. Put react-scripts in the nohost field.
+3. Add Lerna
+
+```
+yarn add --dev -W lerna
+```
+
+4. Initialisae Lerna
+
+```
+npx lerna init
+```
