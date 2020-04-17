@@ -1,6 +1,8 @@
-# React App 2020
+# React Monorepo 2020
 
-React App 2020 is a demonstration of some of my favourite tools and patterns for React in 2020.
+React Monorepo 2020 is a demonstration of some of my favourite tools and patterns for React in 2020 in a Monorep.
+
+This is based on my non-monorepo app, (React App 2020)[https://github.com/cadbox1/react-app-2020], which I strongly recommend starting with. You can scale a single app a long way before even thinking about a Monorepo.
 
 ## 🚀 Demo
 
@@ -11,6 +13,8 @@ React App 2020 is a demonstration of some of my favourite tools and patterns for
 
 - [Create React App](https://create-react-app.dev/docs/adding-typescript/) with [Typescript](https://www.typescriptlang.org/).
 - [Storybook](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app) with [Docs Addon](https://github.com/storybookjs/storybook/tree/master/addons/docs) for component developent and documentation.
+- [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) for monorepo development.
+- [Lerna](https://github.com/lerna/lerna) for running the initial build command in all the packages.
 - [Netlify](https://www.netlify.com/) for building and deployment, even for pull requests.
 - [Theme-UI](https://theme-ui.com/) for styling.
 - [usePromise](https://github.com/cadbox1/react-app-2020/blob/master/src/common/hooks/usePromise.ts) for [API requests](https://github.com/cadbox1/react-app-2020/blob/master/src/pages/Dashboard/index.tsx#L15).
@@ -22,38 +26,46 @@ React App 2020 is a demonstration of some of my favourite tools and patterns for
 
 ## 🔮 Future Development
 
-- Build a responsive Sidebar.
-- Style the page and button.
-- Use [Cypress](https://www.cypress.io/) for end to end tests.
+- Work out how to publish to npm.
+- Maybe some custom rollup config
 
 ### Honerable Mentions
 
-[React Workspaces Playground](https://github.com/react-workspaces/react-workspaces-playground) extends Create React App's react-scripts to get the closest thing to Create React App working in a monorepo with lerna and hot reloading. I think monorepos are a good idea if you have multiple apps depending on a component library but is overkill if you only have a single app like we do here.
+[React Workspaces Playground](https://github.com/react-workspaces/react-workspaces-playground) extends Create React App's react-scripts to transpile local packages but [doesn't help you publish to npm](https://github.com/react-workspaces/react-workspaces-playground/issues/33). Create React App _does_ reload if a dependany package changes so that's more than enough for me.
 
 ## 💻 Running Locally
 
-Install dependencies first.
+Install dependencies and run the initial build.
 
 ```
-npm install
+yarn
+yarn prepare
 ```
 
-Running the app
+### App Development
+
+Start the Create React App.
 
 ```
-npm start
+cd packages/app
+yarn start
 ```
 
-Running Storybook
+### Package Development
+
+You can use Storybook and Jest to develop the package in isolation with
 
 ```
-npm run storybook
+cd packages/package-template
+yarn storybook
+yarn test
 ```
 
-Running tests.
+You can build packages in watch mode and CRA will reload after each change. In another terminal, run:
 
 ```
-npm test
+cd packages/package-template
+yarn build-watch
 ```
 
 ## 📝 Setup VSCode
@@ -69,60 +81,3 @@ Install these extensions:
 Install the [command line tools](https://code.visualstudio.com/docs/editor/command-line).
 
 ## 🔨 DIY
-
-This is how I setup some of the tools.
-
-### Create React App with Typescript
-
-Setup your app with Create React App.
-
-```
-npx create-react-app react-app-2020 --template typescript
-cd react-app-2020
-code ./ -n
-```
-
-Change the `baseUrl` in [tsconfig.json](https://github.com/cadbox1/react-app-2020/blob/master/tsconfig.json) for absolute imports.
-
-#### References:
-
-1. https://create-react-app.dev/docs/adding-typescript/
-1. https://create-react-app.dev/docs/importing-a-component/#absolute-imports
-1. https://code.visualstudio.com/docs/editor/command-line
-
-### Storybook
-
-Setup Storybook.
-
-```
-npx -p @storybook/cli sb init
-npm install --dev @storybook/addon-docs
-```
-
-Modify [.storybook/main.js](https://github.com/cadbox1/react-app-2020/blob/master/.storybook/main.js) to enable the docs addon and to handle mdx files.
-
-Create an [Intro.stories.mdx](https://github.com/cadbox1/react-app-2020/blob/master/docs/Intro.stories.mdx) file at `/docs/`.
-
-Modify [.storybook/config.js](https://github.com/cadbox1/react-app-2020/blob/master/.storybook/config.js) to load the Intro page first so it's at the top.
-
-#### References:
-
-1. https://storybook.js.org/docs/guides/guide-react/
-1. https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app#enabling-docgen-for-storybook-docs
-
-### Theme-UI
-
-```
-npm install --save theme-ui
-npm install --save @theme-ui/presets
-npm install --dev @types/theme-ui
-```
-
-Create a [theme.js](https://github.com/cadbox1/react-app-2020/blob/master/src/theme.js) file at `src/`.
-
-Add the `ThemeProvider` to [src/App.js](https://github.com/cadbox1/react-app-2020/blob/master/src/App.tsx).
-
-#### References
-
-1. https://theme-ui.com/getting-started
-1. https://theme-ui.com/packages/presets
