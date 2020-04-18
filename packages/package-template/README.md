@@ -47,6 +47,28 @@ Build the package continuously.
 yarn build-watch
 ```
 
+## Publishing to NPM
+
+Create an account at npm then login.
+
+```
+npm login
+```
+
+Change private to false in `package.json`.
+
+Then you're ready to publish.
+
+```
+npm publish
+```
+
+or if you have a public scoped package name like `@cadbox1/some-cool-package` you can publish with:
+
+```
+npm publish --access public
+```
+
 ## 🔨 DIY
 
 This is how I built this template.

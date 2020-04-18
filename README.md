@@ -19,22 +19,18 @@ This is based on my non-monorepo app, [React App 2020](https://github.com/cadbox
 - [Visual Studio Code (vscode)](https://code.visualstudio.com/) for editing.
 - [Prettier](https://prettier.io/) for code formatting.
 
+Lerna isn't doing much right now except for running the prepare scripts in each of the package if they have a prepare script.
+
 ## 🔮 Future Development
 
-- Work out how to publish to npm.
-- Maybe some custom rollup config
-
-### Honerable Mentions
-
-[React Workspaces Playground](https://github.com/react-workspaces/react-workspaces-playground) extends Create React App's react-scripts to transpile local packages but [doesn't help you publish to npm](https://github.com/react-workspaces/react-workspaces-playground/issues/33). Create React App _does_ reload if a dependany package changes so that's more than enough for me.
+- Potentially replace microbundle with some custom rollup config.
 
 ## 💻 Running Locally
 
-Install dependencies and run the initial build.
+Install dependencies and run the initial build. This will build each of the packages through the `prepare` script in the root.
 
 ```
 yarn
-yarn prepare
 ```
 
 ### App Development
@@ -62,6 +58,10 @@ You can build packages in watch mode and CRA will reload after each change. In a
 cd packages/package-template
 yarn build-watch
 ```
+
+## 🎨 Prior Art
+
+[React Workspaces Playground](https://github.com/react-workspaces/react-workspaces-playground) extends Create React App's react-scripts to transpile local packages but [doesn't help you publish to npm](https://github.com/react-workspaces/react-workspaces-playground/issues/33). Create React App _does_ reload if a dependany package changes so that's more than enough for me.
 
 ## 🔨 DIY
 

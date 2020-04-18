@@ -1,4 +1,5 @@
 {
+  "name": "react-monorepo-2020",
   "private": true,
   "workspaces": {
     "packages": [
@@ -10,10 +11,11 @@
     ]
   },
   "scripts": {
-    "prepare": "lerna run prepare"
+    "prepare": "lerna run prepare",
+    "clean": "yarn workspaces run clean && rimraf node_modules"
   },
   "devDependencies": {
-    "lerna": "^3.20.2"
-  },
-  "name": "react-monorepo-2020"
+    "lerna": "^3.20.2",
+    "rimraf": "^3.0.2"
+  }
 }
