@@ -27,3 +27,4 @@ storybook-static
 
 # microbundle
 .rts2*
+.yarn
