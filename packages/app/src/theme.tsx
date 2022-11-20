@@ -1,15 +1,9 @@
 // @ts-ignore
 import { bootstrap } from "@theme-ui/presets";
 
-export default {
+const theme = {
 	...bootstrap,
 	sizes: { ...bootstrap.sizes, container: "800px" },
-	layout: {
-		...bootstrap.layout,
-		container: {
-			px: 2,
-		},
-	},
 	buttons: {
 		base: {
 			cursor: "pointer",
@@ -19,3 +13,5 @@ export default {
 		},
 	},
 };
+
+export default theme;

@@ -1,6 +1,6 @@
-/** @jsx jsx */
+import React from "react";
 import { useEffect } from "react";
-import { jsx, Container } from "theme-ui";
+import { Container } from "theme-ui";
 
 import { Button, Toolbar, ToolbarHeading } from "components";
 import { usePromise } from "@cadbox1/use-promise";

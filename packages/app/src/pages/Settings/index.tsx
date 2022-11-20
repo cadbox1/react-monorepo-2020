@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Container } from "theme-ui";
+import React from "react";
+import { Container } from "theme-ui";
 
 import { Button, Toolbar, ToolbarHeading } from "components";
 
