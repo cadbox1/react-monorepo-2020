@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@theme-ui/match-media": "^0.15.4",
+    "@theme-ui/mdx": "^0.15.4",
     "@theme-ui/presets": "^0.15.4"
   },
   "devDependencies": {

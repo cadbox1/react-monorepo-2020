@@ -7761,6 +7761,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@theme-ui/mdx@npm:^0.15.4":
+  version: 0.15.4
+  resolution: "@theme-ui/mdx@npm:0.15.4"
+  dependencies:
+    "@theme-ui/core": ^0.15.4
+    "@theme-ui/css": ^0.15.4
+  peerDependencies:
+    "@emotion/react": ^11
+    "@types/mdx": ^2.0.2
+    react: ">=18"
+  checksum: d6ae030cb132a28a8bb0e2ae0a0c6ff128fae6042f7757e8e6da57615099eb62fc5aa47b4ed402c2b4bfebd0d2a0580231cbfad5988a895c98934b3ad66dd2d5
+  languageName: node
+  linkType: hard
+
 "@theme-ui/mdx@npm:^0.3.0":
   version: 0.3.0
   resolution: "@theme-ui/mdx@npm:0.3.0"
@@ -13485,6 +13499,7 @@ __metadata:
     "@testing-library/react": ^13.4.0
     "@testing-library/user-event": ^14.4.3
     "@theme-ui/match-media": ^0.15.4
+    "@theme-ui/mdx": ^0.15.4
     "@theme-ui/presets": ^0.15.4
     "@types/jest": ^29.2.3
     "@types/node": ^18.11.9
