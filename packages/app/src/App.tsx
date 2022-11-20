@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { ThemeProvider } from "theme-ui";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import theme from "./theme";
 import { SidebarContainer, Sidebar } from "components";
@@ -22,10 +22,10 @@ function App() {
 					</Sidebar>
 
 					<Suspense fallback={<div></div>}>
-						<Switch>
-							<Route exact path="/" component={Dashboard} />
-							<Route path="/settings" component={Settings} />
-						</Switch>
+						<Routes>
+							<Route path="/" element={<Dashboard />} />
+							<Route path="/settings" element={<Settings />} />
+						</Routes>
 					</Suspense>
 				</SidebarContainer>
 			</Router>
