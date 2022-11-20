@@ -4,12 +4,10 @@ import { NavLink } from "react-router-dom";
 import { useSidebar } from "./useSidebar";
 
 export const SidebarItem = ({
-	exact,
 	children,
 	...props
 }: {
 	to: string;
-	exact?: boolean;
 	children: React.ReactNode;
 }) => {
 	const { setShowSidebar, mobileMenu } = useSidebar();
@@ -23,7 +21,6 @@ export const SidebarItem = ({
 	return (
 		<NavLink
 			onClick={handleClick}
-			activeClassName="active"
 			sx={{
 				variant: "styles.a",
 				display: "block",
@@ -39,7 +36,6 @@ export const SidebarItem = ({
 					cursor: "default",
 				},
 			}}
-			exact={exact}
 			{...props}
 		>
 			{children}
