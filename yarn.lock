@@ -11493,9 +11493,9 @@ __metadata:
   linkType: hard
 
 "check-types@npm:^11.1.1":
-  version: 11.2.0
-  resolution: "check-types@npm:11.2.0"
-  checksum: 8ea54e80cf2494b786e6be4e5b6be6695c67a7b328ac7e4810fef144f6d8138c95e2d5e998ef335b0ed0c49d56847458fe983dba531a5ad9970dfd98533acbf9
+  version: 11.2.2
+  resolution: "check-types@npm:11.2.2"
+  checksum: 61ed60d59e3397c8cf694f20edf73d0061cd6a905754efdec2ccdceafbd390cb09717bab855f9eba921d36278f84c86fe20f7e731a384e9803bc469c09153831
   languageName: node
   linkType: hard
 

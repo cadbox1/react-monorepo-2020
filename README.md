@@ -78,3 +78,15 @@ yarn add --dev -W lerna
 ```
 npx lerna init
 ```
+
+## Clean setup installation files and cache
+
+```
+sh scripts/clean.sh
+```
+
+Without removing lock files
+
+```
+sh scripts/softClean.sh
+```
