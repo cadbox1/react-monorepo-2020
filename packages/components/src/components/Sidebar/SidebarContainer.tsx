@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
+import React from "react";
 import React, { useState } from "react";
 // @ts-ignore
 import { useBreakpointIndex } from "@theme-ui/match-media";
@@ -21,7 +20,7 @@ export const SidebarContainer = ({
 	...props
 }: SidebarContainerProps) => {
 	const [showSidebar, setShowSidebar] = useState(false);
-	const toggleSidebar = () => setShowSidebar(showSidebar => !showSidebar);
+	const toggleSidebar = () => setShowSidebar((showSidebar) => !showSidebar);
 
 	const breakpointIndex = useBreakpointIndex();
 	const mobileMenu = breakpointIndex === 0;

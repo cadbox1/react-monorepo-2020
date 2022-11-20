@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSidebar } from "./useSidebar";
 

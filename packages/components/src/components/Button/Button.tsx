@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Button as ThemeUIButton } from "theme-ui";
+import React from "react";
+import { Button as ThemeUIButton } from "theme-ui";
 
 type ButtonProps = {
 	onClick: () => void;

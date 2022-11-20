@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
+import React from "react";
+
 import { SidebarMenuButton } from "components/Sidebar/SidebarMenuButton";
 
 export const Toolbar = ({ children }: { children: React.ReactNode }) => (

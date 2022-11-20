@@ -1,5 +1,4 @@
 import React from "react";
-import { unmountComponentAtNode } from "react-dom";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import "../__mocks__/matchMedia";

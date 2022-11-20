@@ -1,4 +1,4 @@
-/** @jsx jsx */
+import React from "react";
 import { jsx, Container, Styled, ThemeProvider } from "theme-ui";
 import { BrowserRouter as Router } from "react-router-dom";
 import theme from "theme";

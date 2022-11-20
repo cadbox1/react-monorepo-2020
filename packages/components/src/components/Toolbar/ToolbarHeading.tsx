@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
+import React from "react";
 import { Themed as Styled } from "@theme-ui/mdx";
 
 export const ToolbarHeading = ({ children }: { children: React.ReactNode }) => (
