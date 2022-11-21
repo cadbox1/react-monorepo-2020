@@ -6,7 +6,7 @@ type ButtonProps = {
 	children: React.ReactNode;
 };
 export const Button = ({ onClick, sx, children, ...props }: ButtonProps) => (
-	<button onClick={onClick} sx={{ ...sx }} {...props}>
+	<button onClick={onClick} {...props}>
 		{children}
 	</button>
 );

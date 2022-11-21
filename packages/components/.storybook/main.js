@@ -1,11 +1,11 @@
 module.exports = {
-	stories: ["../src/**/*.stories.(js|mdx|tsx)"],
+	stories: ["../src/**/*.stories.@(js|mdx|tsx)"],
 	addons: [
-		"@storybook/preset-create-react-app",
 		{
 			name: "@storybook/addon-docs",
 			options: {
 				configureJSX: true,
+				options: { mdxBabelOptions: { babelrc: true, configFile: true } },
 			},
 		},
 		"@storybook/addon-actions",
