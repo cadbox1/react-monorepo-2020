@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SidebarMenuButton } from "components/Sidebar/SidebarMenuButton";
+import { SidebarMenuButton } from "../Sidebar/SidebarMenuButton";
 
 export const Toolbar = ({ children }: { children: React.ReactNode }) => (
 	<div

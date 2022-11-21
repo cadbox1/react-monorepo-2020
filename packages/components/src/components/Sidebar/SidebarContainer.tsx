@@ -1,4 +1,3 @@
-import React from "react";
 import React, { useState } from "react";
 // @ts-ignore
 import { useBreakpointIndex } from "@theme-ui/match-media";
