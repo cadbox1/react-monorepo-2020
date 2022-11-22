@@ -90,3 +90,8 @@ Without removing lock files
 ```
 sh scripts/softClean.sh
 ```
+
+## setup dependencies
+
+node v16.18.1
+yarn v3.3.0

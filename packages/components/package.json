@@ -16,7 +16,8 @@
   "dependencies": {
     "@theme-ui/match-media": "^0.15.4",
     "@theme-ui/mdx": "^0.15.4",
-    "@theme-ui/presets": "^0.15.4"
+    "@theme-ui/presets": "^0.15.4",
+    "react-router-dom": "^6.4.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
