@@ -15,9 +15,7 @@ function App() {
 			<Router>
 				<SidebarContainer>
 					<Sidebar>
-						<SidebarItem to="/" exact>
-							Dashboard
-						</SidebarItem>
+						<SidebarItem to="/">Dashboard</SidebarItem>
 						<SidebarItem to="/settings">Settings</SidebarItem>
 					</Sidebar>
 
