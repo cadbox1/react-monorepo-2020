@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// @ts-ignore
 import { useBreakpointIndex } from "@theme-ui/match-media";
 
 export const SidebarContext = React.createContext({
