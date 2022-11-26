@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { Container } from "theme-ui";
-
 import { Button, Toolbar, ToolbarHeading } from "components";
-import { usePromise } from "@cadbox1/use-promise";
 
 const kanyeApi = "https://api.kanye.rest";
 
@@ -12,17 +10,15 @@ type KanyeApiResponse = {
 };
 
 export const Dashboard = () => {
-	const { value, pending, call } = usePromise<KanyeApiResponse>({
-		promiseFunction: async () => {
-			const response = await fetch(kanyeApi);
-			const json = await response.json();
-			return json;
-		},
-	});
+	const [response, setResponse] = useState<KanyeApiResponse | null>(null);
+
+	const callKanye = () =>
+		fetch(kanyeApi)
+			.then((res) => res.json())
+			.then((res) => setResponse(res));
 
 	useEffect(() => {
-		call();
-		// eslint-disable-next-line
+		callKanye();
 	}, []);
 
 	return (
@@ -31,11 +27,11 @@ export const Dashboard = () => {
 				<ToolbarHeading>Dashboard</ToolbarHeading>
 			</Toolbar>
 			<Container>
-				<Button onClick={() => call()}>
-					{pending ? "Refreshing..." : "Refresh"}
+				<Button onClick={() => callKanye()}>
+					{!response ? "Refreshing..." : "Refresh"}
 				</Button>
 				<p>Random Kanye West quote:</p>
-				<p>{value?.quote}</p>
+				<p>{response?.quote}</p>
 			</Container>
 		</div>
 	);
