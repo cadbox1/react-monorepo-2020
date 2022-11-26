@@ -3,7 +3,6 @@
 	"version": "1.0.0",
 	"private": true,
 	"dependencies": {
-		"@cadbox1/use-promise": "1.0.0",
 		"@emotion/react": "^11.10.5",
 		"@theme-ui/css": "^0.15.4",
 		"@theme-ui/match-media": "^0.15.4",
